@@ -15,12 +15,6 @@ const map = [
     "W       W       W   W",
     "WWWWWWWWWWWWWWWWWWWWW",
 ];
-let slides=[
-    "slideRight",
-    "slideLeft",
-    "slideUp",
-    "slideDown",
-]
 const createMaze = ()=>{
     let contIds =0
     let divMaz = document.querySelector(".container_maze")
