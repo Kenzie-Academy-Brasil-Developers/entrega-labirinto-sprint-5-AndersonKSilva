@@ -57,50 +57,43 @@ const collide= (row, col)=>{
         victory()
     }
 }
+const removeClass=()=>{
+    let playerAnimation = document.querySelector("#player")
+    playerAnimation.classList.remove("slideDown")
+    playerAnimation.classList.remove("slideRight")
+    playerAnimation.classList.remove("slideUp")
+    playerAnimation.classList.remove("slideLeft")
+}
 const movePlayer =()=>{
     document.addEventListener("keydown", (event) => {
         const keyName = event.key;
         let wherePlayer = document.querySelector(".playerPosition")
         let playerAnimation = document.querySelector("#player")
-        console.log(playerAnimation)
         let rowPlayer = wherePlayer.classList[1]
         let colPlayer = wherePlayer.classList[2]
         let numberRow = rowPlayer.replace(/\D/gim, '')
         let numberCol = colPlayer.replace(/\D/gim, '')
     if(keyName==="ArrowRight"){
-        playerAnimation.classList.remove("slideDown")
+        removeClass()
         playerAnimation.classList.add("slideRight")
-        playerAnimation.classList.remove("slideUp")
-        playerAnimation.classList.remove("slideLeft")
-
         numberCol ++
         collide(numberRow, numberCol)
-        
     }
     if(keyName==="ArrowDown"){
+        removeClass()
         playerAnimation.classList.add("slideDown")
-        playerAnimation.classList.remove("slideRight")
-        playerAnimation.classList.remove("slideUp")
-        playerAnimation.classList.remove("slideLeft")
-        
         numberRow++
         collide(numberRow, numberCol)
     }
     if(keyName==="ArrowUp"){
-        playerAnimation.classList.remove("slideDown")
-        playerAnimation.classList.remove("slideRight")
+        removeClass()
         playerAnimation.classList.add("slideUp")
-        playerAnimation.classList.remove("slideLeft")
-
         numberRow--
         collide(numberRow, numberCol)
     }
     if(keyName==="ArrowLeft"){
-        playerAnimation.classList.remove("slideDown")
-        playerAnimation.classList.remove("slideRight")
-        playerAnimation.classList.remove("slideUp")
+        removeClass()
         playerAnimation.classList.add("slideLeft")
-
         numberCol--
         collide(numberRow, numberCol)
     }
