@@ -42,6 +42,7 @@ img{
 }
 .wall{
     background: blue;
+    /* background: lightgreen; */
     /* background-image: url("img/mato.png"); */
     /* background-repeat: no-repeat; */
     /* background-size: 100%; */
